@@ -154,10 +154,10 @@ const Index = () => {
     const exportPdf = () => {
         // dt.current?.exportCSV();
         import('jspdf').then((jsPDF) => {
-            import('jspdf-autotable').then(() => {
+            import('jspdf-autotable').then((autoTable) => {
                 const doc = new jsPDF.default();
                 doc.text('RIT CENTRAL LIBRARY', 65, 10);
-                doc.autoTable(exportColumns, products);
+                // doc.autoTable(exportColumns, products);
                 doc.save('members-list.pdf');
             });
         });
